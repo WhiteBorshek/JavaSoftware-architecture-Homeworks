@@ -1,10 +1,8 @@
 package Homework3;
 /*
-
 Принцип инверсии зависимостей (Dependency Inversion Principle - DIP)
 DIP гласит, что модули высшего уровня не должны зависеть от модулей нижнего уровня.
 Они должны зависеть от абстракций, а не от конкретных реализаций.
-
  */
 public class DIP {
     interface MessageSender {
