@@ -1,0 +1,40 @@
+@startuml
+
+class EditingBlock {
+  +editModel()
+}
+
+class ViewingBlock {
+  +displayModel()
+}
+
+class ModelCreationBlock {
+  +createModel()
+  +importModel()
+}
+
+class Rendering {
+  +renderScene()
+}
+
+class Conversion {
+  +convertModel()
+}
+
+class ModelLoader {
+  +loadModel(filename: String)
+}
+
+class ModelSaver {
+  +saveModel(filename: String)
+}
+
+EditingBlock --> Rendering : uses
+ViewingBlock --> Rendering : uses
+ModelCreationBlock --> Rendering : uses
+ModelCreationBlock --> ModelLoader : uses
+ModelCreationBlock --> ModelSaver : uses
+ModelLoader --> Conversion : uses
+ModelSaver --> Conversion : uses
+
+@enduml
